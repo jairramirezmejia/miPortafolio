@@ -1,0 +1,5 @@
+'use strict';
+function profilePage(){
+  return title('Mi perfil','Datos de tu cuenta y organización.')
+    +`<div class="grid two">${card('Información personal',`<div class="row profile-heading"><div class="avatar profile-avatar">${esc(current.initials)}</div><div><h2>${esc(current.name)}</h2><p class="muted">${esc(current.company)}</p><span class="pill green">Cuenta activa</span></div></div><hr class="divider"><div class="fieldgrid"><div><span class="label">Correo electrónico</span>${esc(current.email)}</div><div><span class="label">Teléfono</span>${esc(current.phone||'—')}</div><div><span class="label">Ciudad</span>${esc(current.city||'—')}</div><div><span class="label">Tipo de cuenta</span>${esc(current.role)}</div></div>`)}${current.role==='transportista'?card('Vehículo',`<img class="productcover" src="${PH.truck}" alt="Camión de carga"><p style="margin-top:11px"><b>${esc(current.truck||'—')}</b><br>Placa ${esc(current.plate||'—')}</p>`):card('Información de la cuenta',`<p class="muted">Mantén actualizados tus datos de contacto para facilitar la coordinación de tus solicitudes y servicios.</p>`)}</div>`;
+}
